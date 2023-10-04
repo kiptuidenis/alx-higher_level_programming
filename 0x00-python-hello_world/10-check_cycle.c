@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 
-typedef struct listint_t listint_t;
-
 /**
  * check_cycle - Checks if a singly linked list has a cycle.
  * @list: A pointer to the head of the linked list.
