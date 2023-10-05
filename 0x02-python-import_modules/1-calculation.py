@@ -2,6 +2,7 @@
 
 from calculator_1 import add, sub, mul, div
 
+
 def calc():
     """Calculate and print sum, diff, product and div"""
     a = 10
