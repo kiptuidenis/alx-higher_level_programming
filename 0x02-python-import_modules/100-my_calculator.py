@@ -3,6 +3,7 @@
 from calculator_1 import add, sub, mul, div
 from sys import argv
 
+
 def calculator():
     length = len(argv)
 
@@ -31,6 +32,7 @@ def calculator():
         exit(1)
 
     return
+
 
 if __name__ == "__main__":
     calculator()
