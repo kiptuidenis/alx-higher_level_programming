@@ -9,6 +9,7 @@ def add_nums():
 
     print("{} + {} = {}".format(a, b, add(a, b)))
 
+    return
 
 if __name__ == "__main__":
     add_nums()
