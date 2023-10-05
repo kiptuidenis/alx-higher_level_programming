@@ -2,9 +2,10 @@
 
 from variable_load_5 import a
 
-def prints_a():
+
+def print_imported():
     print(a)
-    return
+
 
 if __name__ == "__main__":
-    prints_a()
+    print_imported()
