@@ -1,20 +1,25 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
-    import sys
+import sys
 
+
+def print_args():
     argv = sys.argv
+    num_of_args = len(argv) - 1
 
-    length = len(argv)
+    if (num_of_args == 0):
+        print("{} arguments.".format(num_of_args))
+        return
+    if (num_of_args == 1):
+        print("{} argument:".format(num_of_args))
+        print("{}: {}".format(num_of_args, argv[num_of_args]))
+        return
+    print("{} arguments:".format(num_of_args))
 
-    if length == 1:
-        print("{} arguments.".format(0))
-        exit()
+    for args in range(1, num_of_args + 1):
+        print("{}: {}".format(args, argv[args]))
+    return
 
-    elif length == 2:
-        print("{} argument:".format(length - 1))
-    else:
-         print("{} arguments:".format(length - 1))
 
-    for args in range(1, length):
-         print("{}: {} ".format(args, argv[args]))
+if __name__ == "__main__":
+    print_args()
