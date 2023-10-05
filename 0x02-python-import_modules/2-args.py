@@ -6,7 +6,7 @@ def printArgs():
     length = len(argv)
 
     if length == 1:
-        print("0 arguments.")
+        print("{} arguments.".format(0))
         return
 
     elif length == 2:
