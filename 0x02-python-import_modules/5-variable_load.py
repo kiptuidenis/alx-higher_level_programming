@@ -8,4 +8,3 @@ def prints_a():
 
 if __name__ == "__main__":
     prints_a()
-
