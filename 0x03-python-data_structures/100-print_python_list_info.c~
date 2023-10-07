@@ -1,0 +1,69 @@
+#include <Python.h>
+#include <stdio.h>
+
+void print_python_list_info(PyObject *p) {
+    Py_ssize_t size, allocated, i;
+    PyObject *item;
+
+    size = PyList_Size(p);
+    allocated = ((PyListObject *)p)->allocated;
+
+    printf("[*] Size of the Python List = %ld\n", size);
+    printf("[*] Allocated = %ld\n", allocated);
+
+    for (i = 0; i < size; i++) {
+        item = PyList_GetItem(p, i);
+        printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+    }
+}
+
+int main() {
+    Py_Initialize();
+    PyObject *myList = PyList_New(0);
+
+    // Add elements to the list
+    PyList_Append(myList, Py_BuildValue("s", "hello"));
+    PyList_Append(myList, Py_BuildValue("s", "World"));
+
+    print_python_list_info(myList);
+
+    PyList_SetSlice(myList, 1, 2, NULL);
+    print_python_list_info(myList);
+
+    PyObject *newList = PyList_New(0);
+    PyObject *tuple = PyTuple_Pack(2, Py_BuildValue("i", 9),
+				   Py_BuildValue("i", 8));
+    PyObject *nestedList = PyList_New(3);
+    PyList_SetItem(nestedList, 0, Py_BuildValue("i", 9));
+    PyList_SetItem(nestedList, 1, Py_BuildValue("i", 8));
+    PyList_SetItem(nestedList, 2, Py_BuildValue("i", 1024));
+
+    PyList_Append(newList, Py_BuildValue("i", 4));
+    PyList_Append(newList, Py_BuildValue("i", 5));
+    PyList_Append(newList, Py_BuildValue("f", 6.0));
+    PyList_Append(newList, tuple);
+    PyList_Append(newList, nestedList);
+    PyList_Append(newList, Py_BuildValue("s", "My string"));
+
+    PyList_SetSlice(myList, 2, 3, newList);
+    print_python_list_info(myList);
+
+    PyList_SetSlice(myList, 0, PyList_Size(myList), NULL);
+    print_python_list_info(myList);
+
+    PyList_Append(myList, Py_BuildValue("i", 0));
+    print_python_list_info(myList);
+    PyList_Append(myList, Py_BuildValue("i", 1));
+    PyList_Append(myList, Py_BuildValue("i", 2));
+    PyList_Append(myList, Py_BuildValue("i", 3));
+    PyList_Append(myList, Py_BuildValue("i", 4));
+    print_python_list_info(myList);
+
+    PyList_Pop(myList, PyList_Size(myList) - 1);
+    print_python_list_info(myList);
+
+    Py_DECREF(myList);
+    Py_Finalize();
+
+    return 0;
+}
