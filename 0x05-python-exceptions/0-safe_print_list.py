@@ -6,6 +6,10 @@ def safe_print_list(my_list=[], x=0):
     try:
         if x < 0:
             return 0
+        if not isinstance(my_list, list):
+            raise TypeError
+        if not isinstance(x, int):
+            raise ValueError
         for i in range(0, x):
             print("{}".format(my_list[i]), end="")
         print()
@@ -14,3 +18,5 @@ def safe_print_list(my_list=[], x=0):
     except IndexError:
         print()
         return i
+    except (ValueError, TypeError):
+        return 0
