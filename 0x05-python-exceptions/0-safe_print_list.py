@@ -3,20 +3,14 @@
 
 def safe_print_list(my_list=[], x=0):
     """Safely prints the contents of a list"""
-    try:
-        if x < 0:
-            return 0
-        if not isinstance(my_list, list):
-            raise TypeError
-        if not isinstance(x, int):
-            raise ValueError
-        for i in range(0, x):
+    ret = 0
+    for i in range(x):
+        try:
             print("{}".format(my_list[i]), end="")
-        print("")
-        return i + 1
+            ret += 1
 
-    except IndexError:
-        print("")
-        return i
-    except (ValueError, TypeError):
-        return 0
+        except IndexError:
+            break
+
+    print("")
+    return ret
