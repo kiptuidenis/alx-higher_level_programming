@@ -41,6 +41,7 @@ class Square:
         """Allows for '<' operator usage"""
 
         return self.__area < other.__area
+
     def __le__(self, other):
         """Allows for '<=' operator usage"""
 
