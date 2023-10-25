@@ -25,6 +25,8 @@ class Square:
             raise ValueError("size must be >= 0")
         elif not isinstance(value, (int, float)):
             raise TypeError("size must be a number")
+        self.__size = value
+        self.__area = value ** 2
 
     def area(self):
         """Finds the area of the square"""
