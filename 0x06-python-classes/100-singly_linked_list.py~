@@ -1,0 +1,84 @@
+#!/usr/bin/python3
+"""This module compirises of a linked list"""
+
+
+class Node:
+    """This is a template for a node"""
+
+    def __init__(self, data, next_node=None):
+        """Initialises the node with data"""
+
+        self.data = data
+        self.next_node = next_node
+
+    @property
+    def data(self):
+        """Gets the data stored in node"""
+        return self.__data
+    @data.setter
+    def data(self, value):
+        """sets data field to value"""
+        if isinstance(value, int):
+            self.__data = value
+        else:
+            raise TypeError("data must be an integer")
+
+    @property
+    def next_node(self):
+        """Gets the reference to next node"""
+        return self.__next_node
+    @next_node.setter
+    def next_node(self, value):
+        """sets the reference to next node"""
+        if isinstance(value, Node) or value == None:
+            self.__next_node = value
+        else:
+            raise TypeError("next_node must be a Node object")
+
+class SinglyLinkedList:
+    """Creates the linked list"""
+
+    def __init__(self):
+        """initializes the list"""
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """Inserts value in sorted list"""
+
+        node = Node(value)
+        if self.__head == None:
+            node.data = value
+            self.__head = node
+        else:
+            temp1 = self.__head
+            size = 1
+
+            while(temp1.next_node):
+                if temp1.data < value:
+                    temp2 = temp1
+                    temp1 = temp1.next_node
+                    size += 1
+
+                else:
+                    node.next_node = temp1
+                    if size == 1:
+                        self.__head = node
+                    else:
+                        temp2.next_node = node
+                return
+
+            temp1.next_node = node
+            return
+
+        def __str__(self):
+            """Return a string representation of linked list"""
+            result = ""
+
+            if self.__head is None:
+                return result
+            else:
+                temp = self.__head
+                while temp:
+                    result += str(temp.data) + "\n"
+                    temp = temp.next_node
+                return result
