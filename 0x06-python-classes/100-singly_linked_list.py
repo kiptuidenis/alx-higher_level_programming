@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""This module contains linked list"""
+
+
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
@@ -25,13 +29,14 @@ class Node:
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     def __init__(self):
         self.__head = None
 
     def sorted_insert(self, value):
         new_node = Node(value)
-        
+
         if self.__head is None or self.__head.data >= value:
             new_node.next_node = self.__head
             self.__head = new_node
@@ -49,5 +54,3 @@ class SinglyLinkedList:
             result += str(current.data) + "\n"
             current = current.next_node
         return result
-
-
