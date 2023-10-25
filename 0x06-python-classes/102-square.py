@@ -9,7 +9,6 @@ class Square:
         """Initializes the size field"""
 
         self.size = size
-        self.__area = size ** 2
 
     @property
     def size(self):
@@ -26,7 +25,6 @@ class Square:
         elif not isinstance(value, (int, float)):
             raise TypeError("size must be a number")
         self.__size = value
-        self.__area = value ** 2
 
     def area(self):
         """Finds the area of the square"""
@@ -37,29 +35,29 @@ class Square:
     def __eq__(self, other):
         """Allows for '==' operator usage"""
 
-        return self.__area == other.__area
+        return self.area() == other.area()
 
     def __lt__(self, other):
         """Allows for '<' operator usage"""
 
-        return self.__area < other.__area
+        return self.area() < other.area()
 
     def __le__(self, other):
         """Allows for '<=' operator usage"""
 
-        return self.__area <= other.__area
+        return self.area() <= other.area()
 
     def __gt__(self, other):
         """Allows for '>' operator usage"""
 
-        return self.__area > other.__area
+        return self.area() > other.area()
 
     def __ge__(self, other):
         """Allows for '>=' operator usage"""
 
-        return self.__area >= other.__area
+        return self.area() >= other.area()
 
     def __ne__(self, other):
         """Allows for '!=' operator usage"""
 
-        return self.__area != other.__area
+        return self.area() != other.area()
