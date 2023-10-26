@@ -1,0 +1,41 @@
+# This is a test file that tests the add_integer function from the 0-add_integer module.
+
+# Import the add_integer function from the module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Test cases for the add_integer function
+>>> add_integer(5, 6)
+11
+
+>>> add_integer(5.6, 6)
+11
+
+>>> add_integer(6, 4.7)
+10
+
+# These test cases should raise TypeError
+>>> add_integer("school", 45)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(45, "school")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test cases with missing arguments
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(45)
+143
+
+# Test case with missing arguments
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
