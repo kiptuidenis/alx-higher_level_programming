@@ -7,7 +7,8 @@ def text_indentation(text):
     """This function prints the text based on the following conditions:
     text must be a string, otherwise raise a TypeError exception with
     the message text must be a string
-    There should be no space at the beginning or at the end of each printed line
+    There should be no space at the beginning or at the end of
+    each printed line
 
     Args: text
     """
@@ -15,7 +16,7 @@ def text_indentation(text):
         raise TypeError("Input must be a string")
     i = 0
 
-    while(i < len(text)):
+    while (i < len(text)):
         if text[i] in ('.', '?', ':'):
             print(text[i])
             print()
