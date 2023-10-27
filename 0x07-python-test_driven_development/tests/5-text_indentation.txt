@@ -1,0 +1,47 @@
+# This is a test file that tests the text_indentation function
+
+# Import the add_integer function from the module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test when text is not a string
+>>> text_indentation(6)
+Traceback (most recent call last):
+	...
+TypeError: Input must be a string
+
+# Test when text is empty
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+# Test when text is a string
+>>> text_indentation("Denis. Kipkorir?Penzi")
+Denis.
+<BLANKLINE>
+Kipkorir?
+<BLANKLINE>
+Penzi
+
+# Test extreme cases
+>>> text_indentation("Denis. Kipkorir?Penzi...??I am good:..")
+Denis.
+<BLANKLINE>
+Kipkorir?
+<BLANKLINE>
+Penzi.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+?
+<BLANKLINE>
+I am good:
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
