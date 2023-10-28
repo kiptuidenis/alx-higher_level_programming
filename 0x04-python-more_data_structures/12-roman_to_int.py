@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
 
     prev_value = 0  # Initialize the previous value
 
-    for letter in roman_string[::-1]:  # Reverse from right to left
+    for letter in roman_string[::-1]: # Reverse from right to left
         if letter not in romans:
             return 0
         value = romans[letter]
