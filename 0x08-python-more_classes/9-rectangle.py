@@ -23,6 +23,7 @@ class Rectangle:
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
+        self.area1 = 0
 
     @property
     def width(self):
@@ -70,13 +71,31 @@ class Rectangle:
 
     def area(self):
         """Calculate and return the area of the Rectangle."""
-        return self.__width * self.__height
+        self.area1 = self.__width * self.__height
+        return self.area1
 
     def perimeter(self):
         """Calculate and return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def bigger_or_equal(rect_1, rect_2):
+        """Compares two rectangles by area
+        Args:
+            rect_1 - rectangle 1
+            rect_2 - rectangle 2
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        elif rect_2.area1 > rect_1.area1:
+            return rect_2
+        elif rect_1.area1 > rect_2.area1:
+            return rect_1
+        else:
+            return rect_1
 
     def __str__(self):
         """
@@ -103,6 +122,16 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when a Rectangle object is deleted and update the instance count."""
+        """Print a message when a Rectangle object is deleted
+        and update the instance count."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+    @classmethod
+    def square(cls, size=0):
+        """Creates a rectangle of width == height == size
+        Args:
+            size - size of the rectangle
+        """
+        new_square = cls(size, size)
+        return new_square
