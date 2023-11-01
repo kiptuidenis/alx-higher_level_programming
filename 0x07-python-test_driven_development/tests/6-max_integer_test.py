@@ -39,5 +39,11 @@ class TestMaxInteger(unittest.TestCase):
         """Tests if list is empty"""
         self.assertEqual(max_integer([]), None)
 
+    def test_list_is_same(self):
+        """Tests if list remain the same after opeartion"""
+        my_list = [10, 20, 30, 40]
+        max_integer(my_list)
+        self.assertEqual(my_list, [10, 20, 30, 40])
+
 if __name__ == '__main__':
     unittest.main()
