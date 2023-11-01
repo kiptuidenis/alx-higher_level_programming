@@ -1,49 +1,32 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
-
 import unittest
-
 max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """Tests edge cases for the function max_integer
-    """
-
+    """ max_integer unittest"""
     def test_max_integer(self):
-        """ This is the test function
-        """
-        self.assertEqual(max_integer([8, 200, 40, 1000, 20]), 1000)
-
-    def test_none_args(self):
-        """Tests for no arguments"""
-        self.assertIsNone(max_integer())
-
-    def test_none_list_args(self):
-        """Tests if argument is a list"""
-        with self.assertRaises(TypeError):
-            max_integer(7)
-
-    def test_list_not_homogenous(self):
-        """Test if all elements in list are integers"""
-        with self.assertRaises(TypeError):
-            max_integer([7, 8, 'o', 77])
-
-    def test_list_not_homog(self):
-        """Test if all elements in lists"""
-        with self.assertRaises(TypeError):
-            max_integer([9, 3, 5], [4, 5, 5])
-
-    def test_list_empty(self):
-        """Tests if list is empty"""
+        """ test_max_integer function """
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([2, 4, 1, 3]), 4)
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
+        self.assertEqual(max_integer([-3, -2, -1, 0]), 0)
+        self.assertEqual(max_integer([1.0, 2, 3.3, 4]), 4)
+        self.assertEqual(max_integer([1.0, 2, 3.3, 4.5]), 4.5)
+        self.assertEqual(max_integer([4]), 4)
+        self.assertEqual(max_integer("Error"), "r")
+        self.assertEqual(max_integer((1, 2, 3, 4)), 4)
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer(), None)
 
-    def test_list_is_same(self):
-        """Tests if list remain the same after opeartion"""
-        my_list = [10, 20, 30, 40]
-        max_integer(my_list)
-        self.assertEqual(my_list, [10, 20, 30, 40])
+    def test_types(self):
+        """ test_types function """
+        self.assertRaises(TypeError, max_integer, 4)
+        self.assertRaises(TypeError, max_integer, {1, 2, 3, 4})
+        self.assertRaises(TypeError, max_integer, ["1", 2, 3, 4])
+        self.assertRaises(TypeError, max_integer, True)
 
 if __name__ == '__main__':
     unittest.main()
