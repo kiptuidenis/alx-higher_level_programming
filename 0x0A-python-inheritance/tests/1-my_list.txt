@@ -28,3 +28,18 @@ True
 >>> my_list = MyList([1, "ty", 3, 1.2])
 >>> my_list
 [1, 'ty', 3, 1.2]
+
+Checking for module docstring:
+         >>> m = __import__("1-my_list").__doc__
+         >>> len(m) > 1
+         True
+
+Checking for class docstring:
+         >>> c = __import__("1-my_list").MyList.__doc__
+         >>> len(c) > 1
+         True
+
+Checking for method docstring:
+	  >>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+	  >>> len(mod) > 1
+	  True
