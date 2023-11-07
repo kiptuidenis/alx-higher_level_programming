@@ -15,14 +15,13 @@ def load_add_save():
     path = Path('./add_item.json')
     my_list = []
     if not path.is_file():
-         save_to_json_file(my_list, "add_item.json")
-
+        save_to_json_file(my_list, "add_item.json")
 
     my_list = load_from_json_file("add_item.json")
     list_args = [x for x in sys.argv if x != sys.argv[0]]
 
     save_to_json_file(my_list + list_args, "add_item.json")
- 
- 
+
+
 if __name__ == "__main__":
     load_add_save()
