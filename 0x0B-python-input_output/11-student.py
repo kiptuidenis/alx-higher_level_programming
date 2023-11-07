@@ -37,7 +37,7 @@ class Student:
 
         Args:
             json (dict): Key/Value pair. Key-will be the public attribute name
-                                         Value-will be value of the public attribute
+                         Value-will be value of the public attribute
         """
 
         for key in json:
