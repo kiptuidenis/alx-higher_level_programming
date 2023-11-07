@@ -15,7 +15,8 @@ def class_to_json(obj):
                       a dictionary for serialization
     """
     dir_list = dir(obj)
-    attr_list = [x for x in dir_list if "__" not in x]
-    attr_dict = {attr_list[i]: getattr(obj, attr_list[i]) 
-    for i in range(0, len(attr_list))}
+    fields = [name for name in dir_list if not callable(getattr(obj, name)) and not name.startswith("__")]
+    print(fields)
+    attr_dict = {fields[i]: getattr(obj, fields[i]) 
+    for i in range(0, len(fields))}
     return attr_dict
