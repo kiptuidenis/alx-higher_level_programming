@@ -31,3 +31,19 @@ class Student:
         attr_dict = {fields[i]: getattr(self, fields[i])
                      for i in range(0, len(fields))}
         return attr_dict
+
+    def reload_from_json(self, json):
+        """Replaces all attributes of the Student instance
+
+        Args:
+            json (dict): Key/Value pair. Key-will be the public attribute name
+                                         Value-will be value of the public attribute
+        """
+
+        for key in json:
+            if key == "first_name":
+                self.first_name = json[key]
+            if key == "last_name":
+                self.last_name = json[key]
+            if key == "age":
+                self.age = json[key]
