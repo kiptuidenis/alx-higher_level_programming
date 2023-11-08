@@ -19,7 +19,7 @@ def pascal_triangle(n):
         i = 0
         j = 1
         prev = triangle[i]
-        new = [1]
+        new_row = [1]
 
         while (j < n):
             for k in range(len(prev)):
@@ -27,9 +27,9 @@ def pascal_triangle(n):
                     elem = prev[k]
                 else:
                     elem = prev[k] + prev[k + 1]
-                new.append(elem)
-            triangle.append(new)
-            new = [1]
+                new_row.append(elem)
+            triangle.append(new_row)
+            new_row = [1]
             i += 1
             j += 1
             prev = triangle[i]
