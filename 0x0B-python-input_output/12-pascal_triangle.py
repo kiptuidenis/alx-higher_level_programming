@@ -13,16 +13,11 @@ def pascal_triangle(n):
 
     if n <= 0:
         return triangle
-    if n == 1:
+ 
+    else:
         triangle = [[1]]
-        return triangle
-    if n == 2:
-        triangle = [[1], [1, 1]]
-        return triangle
-    if n > 2:
-        triangle = [[1], [1, 1]]
-        i = 1
-        j = 2
+        i = 0
+        j = 1
         prev = triangle[i]
         new = [1]
 
