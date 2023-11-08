@@ -4,16 +4,16 @@
 
 
 def pascal_triangle(n):
-    """that returns a list of lists of integers representing the Pascal’s triangle of n:
-
+    """that returns a list of lists of integers
+    representing the Pascal’s triangle of n:
     Args:
-        n (integer): 
+        n (integer):
     """
     triangle = []
 
     if n <= 0:
         return triangle
- 
+
     else:
         triangle = [[1]]
         i = 0
@@ -21,7 +21,7 @@ def pascal_triangle(n):
         prev = triangle[i]
         new = [1]
 
-        while(j < n):
+        while (j < n):
             for k in range(len(prev)):
                 if k == len(prev) - 1:
                     elem = prev[k]
