@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """This module has a class Student that retrieves
-a dictionary representation of a Student instance"""
+a dictionary representation of a Student instance
+It also replaces all attributes with given values
+ from json file
+"""
 
 
 class Student:
