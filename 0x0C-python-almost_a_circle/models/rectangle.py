@@ -106,3 +106,10 @@ class Rectangle(Base):
         """
         self.area = self.__width * self.__height
         return self.area
+
+    def display(self):
+        """Prints out the Rectangle instance with character '#'
+        """
+        print_char = '#'
+        for i in range(self.height):
+            print(print_char * self.width)
