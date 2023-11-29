@@ -1,1 +1,0 @@
-"""Ensures this folder(models) is a Python package"""

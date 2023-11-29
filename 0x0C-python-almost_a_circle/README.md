@@ -1,14 +1,1 @@
-This repository contains revision tasks on the following concepts:
--Import
--Exceptions
--Class
--Private attribute
--Getter/Setter
--Class method
--Static method
--Inheritance
--Unittest
--Read/Write file
--args and kwargs
--Serialization/Deserialization
--JSON
+This repo contains tasks on 0x0c.Python-Almost a circle
