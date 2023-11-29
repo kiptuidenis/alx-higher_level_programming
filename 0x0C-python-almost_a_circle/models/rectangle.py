@@ -111,7 +111,13 @@ class Rectangle(Base):
         """Prints out the Rectangle instance with character '#'
         """
         print_char = '#'
+        print_new_line = '\n'
+        print_space = " "
+
+        if self.y != 0:
+            print(print_new_line * (self.y - 1)) 
         for i in range(self.height):
+            print(print_space * self.x, end="")
             print(print_char * self.width)
 
     def __str__(self):
