@@ -4,7 +4,13 @@
 import MySQLdb
 import sys
 
+
 def list_states(credentials):
+    """Lists all states orderd by id
+
+    Args:
+        credentials (str): Database credentials
+    """
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -24,7 +30,7 @@ def list_states(credentials):
         state = (i, row[0])
         print(state)
 
+
 if __name__ == "__main__":
     credentials = sys.argv[1:]
     list_states(credentials)
-
