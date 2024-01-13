@@ -4,6 +4,7 @@
 import MySQLdb
 import sys
 
+
 def list_states(credentials):
     """lists all states ordered by their ids
 
@@ -28,6 +29,7 @@ def list_states(credentials):
         i += 1
         state = (i, row[0])
         print(state)
+
 
 if __name__ == "__main__":
     credentials = sys.argv[1:]
