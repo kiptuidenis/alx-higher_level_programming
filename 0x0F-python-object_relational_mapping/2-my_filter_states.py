@@ -26,8 +26,10 @@ def list_states(credentials):
 
     rows = cursor.fetchall()
     for row in rows:
-        state = (row[0], row[1])
-        print(state)
+        print(row)
+
+    cursor.close()
+    db.close()
 
 
 if __name__ == "__main__":
