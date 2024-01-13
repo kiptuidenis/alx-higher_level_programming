@@ -26,8 +26,8 @@ def list_states(credentials):
     rows = cursor.fetchall()
     i = 0
     for row in rows:
+        i += 1
         if (row[0].startswith('N')):
-            i += 1
             state = (i, row[0])
             print(state)
 
