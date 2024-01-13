@@ -19,16 +19,15 @@ def list_states(credentials):
         db=credentials[2]
     )
 
+    state_name = credentials[3]
     cursor = db.cursor()
-    query = "SELECT name FROM states ORDER BY id;"
+    query = "SELECT id, name FROM states WHERE name = '{}' ORDER BY id;".format(state_name)
     cursor.execute(query)
 
-    state_name = credentials[3]
     rows = cursor.fetchall()
-    for index, row in enumerate(rows):
-        if (row[0] == state_name):
-            state = (index + 1, row[0])
-            print(state)
+    for row in rows:
+        state = (row[0], row[1])
+        print(state)
 
 
 if __name__ == "__main__":
