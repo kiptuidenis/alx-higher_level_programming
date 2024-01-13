@@ -6,7 +6,7 @@ import sys
 
 
 def list_states(credentials):
-    """Lists all states that start with letter 'N' ordered by ID 
+    """Lists all states that start with letter 'N' ordered by ID
 
     Args:
         credentials (str): Database credentials
