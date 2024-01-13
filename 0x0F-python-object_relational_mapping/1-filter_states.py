@@ -20,15 +20,13 @@ def list_states(credentials):
     )
 
     cursor = db.cursor()
-    query = "SELECT name FROM states WHERE name LIKE 'N%' ORDER BY id;"
+    query = "SELECT name FROM states ORDER BY id;"
     cursor.execute(query)
 
     rows = cursor.fetchall()
-    i = 0
-    for row in rows:
-        i += 1
+    for index, row in enumerate(rows):
         if (row[0].startswith('N')):
-            state = (i, row[0])
+            state = (index + 1, row[0])
             print(state)
 
 
