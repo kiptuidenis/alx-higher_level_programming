@@ -12,7 +12,7 @@ if __name__ == "__main__":
     format(sys.argv[1], sys.argv[2], sys.argv[3])
 
     #create engine
-    engine = create_engine(database_url)
+    engine = create_engine(database_url, pool_pre_ping=True)
 
     #create session
     session = Session(engine)
