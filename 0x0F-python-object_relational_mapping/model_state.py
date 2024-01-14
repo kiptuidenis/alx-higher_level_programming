@@ -17,7 +17,7 @@ class State(Base):
     """
     __tablename__ = "states"
 
-    id = Column("id", Integer, default=11, primary_key=True, autoincrement=True, nullable=False)
+    id = Column("id", Integer, default=11, primary_key=True, unique=True, autoincrement=True, nullable=False)
     name = Column("name", String(128), nullable=False)
 
     def __init__(self, id, name):
