@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """Creates a table named states with id and name as columns"""
 
-from sqlalchemy import Column, String, Integer, MetaData
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+Base = declarative_base()
 
 class State(Base):
     """Defines a state
