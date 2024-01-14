@@ -18,7 +18,7 @@ class State(Base):
     __tablename__ = "states"
 
     id = Column("id", Integer, default=11, primary_key=True, unique=True, autoincrement=True, nullable=False)
-    name = Column("name", String(128), nullable=False, charset='latin1')
+    name = Column("name", String(128), nullable=False)
 
     def __init__(self, id, name):
         """Constructor to initialize name and id
@@ -29,3 +29,5 @@ class State(Base):
         """
         self.id = id
         self.name = name
+
+engine = create_engine(database_url, echo=True)
