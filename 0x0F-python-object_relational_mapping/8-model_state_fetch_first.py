@@ -19,7 +19,6 @@ if __name__ == "__main__":
 
     #Execute query and fetch the results
     rows = session.query(State).first()
-    print(type(rows))
     #Display the results
     if rows is None:
         print("Nothing")
