@@ -6,10 +6,10 @@ from model_state import Base, State
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session
 
-if __name__== "__main__":
+if __name__ == "__main__":
     # Define the database URL
-    database_url = 'mysql+mysqldb://{}:{}@localhost/{}'.format\
-                           (sys.argv[1], sys.argv[2], sys.argv[3])
+    database_url = 'mysql+mysqldb://{}:{}@localhost/{}'.\
+        format(sys.argv[1], sys.argv[2], sys.argv[3])
     # create an engine
     engine = create_engine(database_url, pool_pre_ping=True)
 
