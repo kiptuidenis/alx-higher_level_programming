@@ -14,7 +14,7 @@ if __name__ == "__main__":
     engine = create_engine(database_url)
     session = Session(engine)
 
-    state_to_update = session.query(State).filter_by(id=2).\
+    state_to_update = session.query(State).filter(State.id == 2).\
         first()
 
     state_to_update.name = 'New Mexico'
