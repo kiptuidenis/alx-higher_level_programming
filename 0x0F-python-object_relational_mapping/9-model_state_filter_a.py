@@ -22,7 +22,6 @@ if __name__ == "__main__":
 
     # Create a query
     stmt = session.query(*columns).filter(State.name.like('%a%'))
-
     # Execute query with condition that each state retrieved has letter 'a'
     rows = stmt.all()
     # Display results
