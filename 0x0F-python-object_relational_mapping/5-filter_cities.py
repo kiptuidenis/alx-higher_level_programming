@@ -27,13 +27,13 @@ def list_cities_of_states(credentials):
             ON states.id = cities.state_id\
                 WHERE states.name LIKE BINARY %s\
                     ORDER BY cities.id;"
-    
     cursor.execute(query, (state_name,))
     rows = cursor.fetchall()
 
-    separator = ", "
     if len(rows) == 0:
         print("")
+
+    separator = ", "
     for index, row in enumerate(rows):
         print("{}{}".format(row[0], separator), end="")
         if index == len(rows) - 2:
