@@ -16,9 +16,9 @@ if __name__ == "__main__":
 
     # create session
     session = Session(engine)
-
+    columns = [State.id, State.name]
     # Execute query and fetch the results
-    rows = session.query(State.id, State.name).first()
+    rows = session.query(*columns).first()
     # Display the results
     if rows is None:
         print("Nothing")
