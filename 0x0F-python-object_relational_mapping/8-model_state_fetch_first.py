@@ -25,7 +25,8 @@ if __name__ == "__main__":
 
     #Execute query and fetch the results
     rows = session.execute(query).fetchall()
-
+    if len(rows) == 0:
+        print("")
     #Display the results
     for row in rows:
         print("{}: {}".format(row.id, row.name))
