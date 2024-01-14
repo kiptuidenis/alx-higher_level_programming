@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session(engine)
 
     #Execute query and fetch the results
-    rows = session.query(State).first()
+    rows = session.query(State.id, State.name).first()
     #Display the results
     if rows is None:
         print("Nothing")
