@@ -1,1 +1,1 @@
-This repo contains more tasks on data structures
+This repo contains tasks on sets and dictionaries
