@@ -5,12 +5,10 @@
 class Rectangle {
   constructor (w, h) {
     // This is the constructor of the Rectangle class.
-    // It checks if both width (w) and height (h) are greater than,
-    // 0 before assigning them.
-    if ((w > 0) && (h > 0)) {
-      this.width = w;
-      this.height = h;
-    }
+    // It initializes the width and height properties based on the,
+    // provided arguments.
+    this.width = w;
+    this.height = h;
   }
 }
 
