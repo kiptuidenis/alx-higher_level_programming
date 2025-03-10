@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """"Task 2: Square with size"""
 
 class Square:
